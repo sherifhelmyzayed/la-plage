@@ -1,10 +1,51 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
+    "baseUrl": ".",
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+
+    "paths": {
+      "@assets/*": [
+        "public/assets/*"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@svg/*": [
+        "public/svg/*"
+      ],
+      "@three/*": [
+        "src/components/three/*"
+      ],
+      "@hooks/*": [
+        "src/utils/hooks/*"
+      ],
+      "@stores/*": [
+        "src/utils/stores/*"
+      ],
+      "@functions/*": [
+        "src/utils/functions/*"
+      ],
+      "@shaders/*": [
+        "src/utils/shaders/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -18,8 +59,18 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "allowJs": true,
+
+
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
