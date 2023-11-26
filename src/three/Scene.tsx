@@ -34,12 +34,11 @@ const Scene = () => {
             >
 
                 <Lights />
-                
+
                 <Physics gravity={[0, -30, 0]}>
                     <Ground />
                     <Player />
                     <Cube position={[0, 0.5, -10]} />
-                    {/* <Cubes /> */}
                 </Physics>
                 <PointerLockControls />
 
