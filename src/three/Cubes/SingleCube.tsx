@@ -6,7 +6,6 @@ const SingleCube = ({ position }: { position: Vector3 }) => {
   // @ts-ignore
   const { nodes } = useGLTF("/assets/Cube.glb");
   return (
-
     <RigidBody type="fixed" colliders="trimesh">
       <group scale={2} position={position}>
         <mesh
@@ -18,9 +17,6 @@ const SingleCube = ({ position }: { position: Vector3 }) => {
           <meshStandardMaterial attach={`material`} color={"white"} side={BackSide} />
         </mesh>
       </group>
-
-
-
     </RigidBody>
   )
 }

@@ -1,13 +1,11 @@
 import { AdaptiveDpr, AdaptiveEvents, BakeShadows, KeyboardControls, PointerLockControls, Preload } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Physics } from "@react-three/rapier"
-import { Ground } from './Ground'
 import { Player } from './Player'
 import { ACESFilmicToneMapping } from 'three'
 import AdaptivePixelRatio from './Perf/AdaptivePixelRatio'
 import Lights from './Lights/Lights'
 import CubeGenerator from './Cubes/CubeGenerator'
-
 
 const Scene = () => {
     return (
@@ -32,15 +30,17 @@ const Scene = () => {
                 onContextMenu={(e) => e.preventDefault()}
                 frameloop='always'
             >
-
+                {/* LIGHTS */}
                 <Lights />
 
-                <Physics gravity={[0, -30, 0]} debug>
+                {/* CUBES AND PLAYER */}
+                <Physics gravity={[0, -30, 0]}>
                     <Player />
                     <CubeGenerator />
                 </Physics>
                 <PointerLockControls />
 
+                {/* PERFORMANCE */}
                 <AdaptivePixelRatio />
                 <AdaptiveDpr pixelated />
                 <BakeShadows />
