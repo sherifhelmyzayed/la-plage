@@ -31,7 +31,7 @@ export function Player() {
     })
     return (
         <>
-            <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[0, 10, 0]} enabledRotations={[false, false, false]}>
+            <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[0, 1, 0]} enabledRotations={[false, false, false]}>
                 <CapsuleCollider args={[0.75, 0.5]} />
             </RigidBody>
         </>

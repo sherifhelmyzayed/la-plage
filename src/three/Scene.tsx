@@ -3,10 +3,10 @@ import { Canvas } from '@react-three/fiber'
 import { Physics } from "@react-three/rapier"
 import { Ground } from './Ground'
 import { Player } from './Player'
-import { Cube } from './Cube'
 import { ACESFilmicToneMapping } from 'three'
 import AdaptivePixelRatio from './Perf/AdaptivePixelRatio'
 import Lights from './Lights/Lights'
+import CubeGenerator from './Cubes/CubeGenerator'
 
 
 const Scene = () => {
@@ -19,7 +19,7 @@ const Scene = () => {
                 { name: "right", keys: ["ArrowRight", "d", "D"] },
                 { name: "jump", keys: ["Space"] },
             ]}>
-            <Canvas shadows camera={{ fov: 45 }}
+            <Canvas shadows camera={{ fov: 45, rotation: [0, -Math.PI, 0] }}
                 id='mainCanvas'
                 gl={{
                     preserveDrawingBuffer: true,
@@ -35,10 +35,9 @@ const Scene = () => {
 
                 <Lights />
 
-                <Physics gravity={[0, -30, 0]}>
-                    <Ground />
+                <Physics gravity={[0, -30, 0]} debug>
                     <Player />
-                    <Cube position={[0, 0.5, -10]} />
+                    <CubeGenerator />
                 </Physics>
                 <PointerLockControls />
 
