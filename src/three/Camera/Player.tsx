@@ -55,11 +55,7 @@ export function Player() {
 
             {/* Floor Collider  */}
             <RigidBody ref={groundRef} type="fixed" colliders={false}>
-                <mesh position={[0, 0, 0]} rotation-x={-Math.PI / 2}>
-                    <planeGeometry args={[10, 10]} />
-                    <meshStandardMaterial transparent opacity={1} color="yellow" />
-                </mesh>
-                <CuboidCollider args={[10, 2, 10]} position={[0, -2, 0]} />
+                <CuboidCollider args={[10, 2, 10]} position={[0, -2.1, 0]} />
             </RigidBody>
 
             {/* Wall Collider  */}
