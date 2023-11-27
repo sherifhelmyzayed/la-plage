@@ -10,6 +10,7 @@ import {
 } from 'postprocessing'
 import { useMemo } from 'react'
 import { Color } from 'three'
+// @ts-ignore
 import { N8AOPostPass } from 'n8ao'
 export type UseOutlineEffectParams = ConstructorParameters<typeof OutlineEffect>[2]
 

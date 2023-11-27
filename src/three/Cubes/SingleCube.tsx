@@ -1,4 +1,3 @@
-import { RigidBody } from '@react-three/rapier'
 import { BackSide, Vector3 } from 'three'
 import { useGLTF } from "@react-three/drei";
 
