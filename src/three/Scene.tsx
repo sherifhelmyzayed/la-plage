@@ -34,7 +34,7 @@ const Scene = () => {
                 <Lights />
 
                 {/* CUBES AND PLAYER */}
-                <Physics gravity={[0, -30, 0]}>
+                <Physics gravity={[0, -30, 0]} debug>
                     <Player />
                     <CubeGenerator />
                 </Physics>
